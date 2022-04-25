@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h1>{{name}}</h1>
+    <h2>{{ weather }}</h2>
+    <p>{{temperature}}</p>
+    <p>{{updatedAt.toLocaleString('fr-FR')}}</p>
   </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
   },
  data() { 
    return{
-    name: 'Ma ville', // nom de la ville
+    name: 'Strasbourg', // nom de la ville
     weather: 'Peu nuageux', // descriptif météo 
     temperature: 20.55, // température en °C
     updatedAt: new Date() // date de dernière mise à jour
