@@ -1,28 +1,51 @@
 <template>
-  <div class="hello">
-    <h1>{{name}}</h1>
+  <div>
+    <!-- <h1>{{ name }}</h1>
     <h2>{{ weather }}</h2>
-    <p>{{temperature}}</p>
-    <p>{{updatedAt.toLocaleString('fr-FR')}}</p>
+    <p>{{ temperature }}</p>
+    <p>{{ updatedAt.toLocaleString("fr-FR") }}</p> -->
+    <Testcity 
+    v-for="city in cities" :key="city.name"
+            :name="cities[0].name"
+      :weather="cities[0].weather"
+      :temperature="cities[0].temperature"
+      :updatedAt="cities[0].updatedAt"
+      
+
+    />
+
   </div>
 </template>
-
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String 
-  },
- data() { 
-   return{
-    name: 'Strasbourg', // nom de la ville
-    weather: 'Peu nuageux', // descriptif météo 
-    temperature: 20.55, // température en °C
-    updatedAt: new Date() // date de dernière mise à jour
-   }
-}
-};
+import Testcity from "./City.vue";
+import {format} from "/node_modules/timeago.js"
+export default {  
+  name: "helloWord",
+  components: { Testcity },
+  data: function () {
+    return {
+      cities: [
+        {
+          id: 1,
+          name: "Strasbourg", // nom de la ville
+          weather: "Peu nuageux", // descriptif météo
+          temperature: 20.55, // température en °C
+          updatedAt: format(new Date()), // date de dernière mise à jour
+        },
 
+        { id: 2,
+          name: "Pau", // nom de la ville
+          weather: "Peu nuageux", // descriptif météo
+          temperature: 10.55, // température en °C
+          updatedAt: format(new Date()), // date de dernière mise à jour
+        }
+      ]
+    }
+  },
+  props: {
+    msg: String,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
