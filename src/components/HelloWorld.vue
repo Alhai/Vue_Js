@@ -13,6 +13,7 @@
               :updatedAt="city.updatedAt"
     />
 </div>
+
             <!-- :name="cities[0].name"
       :weather="cities[0].weather"
       :temperature="cities[0].temperature"
