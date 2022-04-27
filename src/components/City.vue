@@ -2,7 +2,7 @@
   <div >
       <h1>{{id}}</h1>
       <h1>{{name}}</h1>
-      <h2>{{weather}}</h2>
+      <h5>{{weather}}</h5>
       <h2>{{temperature}}</h2>
       <h2>{{updatedAt.toLocaleString("fr-FR")}}</h2>
   </div>
@@ -11,7 +11,7 @@
 <script>
 
 export default {
-  name: 'testCity',
+  name: 'TestCity',
    data: function(){
      return {
     //  name: 'Strasbourg', // nom de la ville
