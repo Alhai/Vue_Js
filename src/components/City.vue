@@ -5,6 +5,7 @@
       <h2>{{weather}}</h2>
       <h2>{{temperature}}</h2>
       <h2>{{updatedAt.toLocaleString("fr-FR")}}</h2>
+     
   </div>
 </template>
 

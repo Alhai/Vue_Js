@@ -1,18 +1,25 @@
 <template>
-  <div>
+  <div >
+<div v-for="city in cities" :key="city.id">
     <!-- <h1>{{ name }}</h1>
     <h2>{{ weather }}</h2>
     <p>{{ temperature }}</p>
     <p>{{ updatedAt.toLocaleString("fr-FR") }}</p> -->
-    <Testcity 
-    v-for="city in cities" :key="city.name"
-            :name="cities[0].name"
+    
+    <Testcity :id="city.id" 
+              :name="city.name"
+              :weather="city.weather"
+              :temperature="city.temperature"
+              :updatedAt="city.updatedAt"
+    />
+</div>
+            <!-- :name="cities[0].name"
       :weather="cities[0].weather"
       :temperature="cities[0].temperature"
-      :updatedAt="cities[0].updatedAt"
-      
+      :updatedAt="cities[0].updatedAt" -->
+    
 
-    />
+    
 
   </div>
 </template>
@@ -20,7 +27,7 @@
 import Testcity from "./City.vue";
 import {format} from "/node_modules/timeago.js"
 export default {  
-  name: "helloWord",
+  name: "citiesList",
   components: { Testcity },
   data: function () {
     return {
